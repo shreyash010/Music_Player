@@ -253,3 +253,117 @@ input:checked+.slider:before {
     border-radius: 5px 10px;
     box-shadow: darkmagenta -2px -2px 5px 0px;
 }
+
+/* responsive */
+@media (max-width: 767px) {
+    #player-content {
+        flex-direction: column;
+        height: auto;
+    }
+    
+    #left-nav, #mid-nav, #right-nav {
+        width: 100%;
+        border-radius: 0;
+        margin: 0;
+        box-shadow: none;
+    }
+    
+    #mid-nav {
+        margin-top: 1rem;
+    }
+    
+    #left-nav #dropdown-menu select {
+        width: 100%;
+        margin: 0.5rem 0;
+    }
+    
+    #song-details {
+        padding: 1rem;
+        text-align: center;
+    }
+    
+    #song-details p {
+        font-size: 20px;
+        margin-bottom: 0.3rem;
+    }
+    
+    #song-controls audio {
+        width: 100%;
+    }
+    
+    #btn-controls button {
+        margin: 1rem 0.5rem;
+    }
+    
+    #right-nav {
+        width: 100%;
+        border-radius: 0;
+        margin-top: 1rem;
+    }
+    
+    #playlist input {
+        width: 100%;
+        margin-right: 0;
+    }
+    
+    #contains-playlist {
+        width: 100%;
+        height: auto;
+        margin-top: 1rem;
+    }
+}
+
+/* Tablets and larger devices */
+@media (min-width: 768px) {
+    #player-content {
+        height: 40rem;
+    }
+    
+    #left-nav, #mid-nav, #right-nav {
+        width: 30%;
+    }
+    
+    #left-nav {
+        padding-top: 2rem;
+        border-radius: 0px 10px 10px 0px;
+    }
+    
+    #mid-nav {
+        border-radius: 5px 10px;
+        box-shadow: darkmagenta -2px -2px 5px 0px;
+    }
+    
+    #right-nav {
+        border-radius: 10px 0 0 10px;
+    }
+    
+    #left-nav #dropdown-menu select {
+        margin-left: 0.5rem;
+    }
+    
+    #song-details {
+        padding: 1.5rem;
+    }
+    
+    #song-details p {
+        font-size: 25px;
+        margin-bottom: 0.5rem;
+    }
+    
+    #song-controls audio {
+        width: 90%;
+    }
+    
+    #btn-controls button {
+        margin: 1rem 2rem;
+    }
+    
+    #playlist input {
+        width: 12rem;
+        margin-right: 15px;
+    }
+    
+    #contains-playlist {
+        margin-top: 1rem;
+    }
+}
