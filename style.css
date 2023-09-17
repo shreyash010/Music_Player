@@ -32,7 +32,7 @@ header{
 }
 
 #left-nav{
-    width: 27%;
+    width: 26%;
     padding-top: 2rem;
     border-radius: 0px 10px 10px 0px;
 }
@@ -52,7 +52,7 @@ header{
 .song-list li{
     list-style: none;
     background-color: #4384df;
-    width: 50%;
+    width: 65%;
     padding: .6rem;
     color: whitesmoke;
     border-radius: 10px;
@@ -67,6 +67,7 @@ header{
 #mid-nav{
     width: 36%;
     border-radius: 5px 10px;
+    box-shadow: darkmagenta -2px -2px 5px 0px;
 }
 
 #song-details{
@@ -132,6 +133,29 @@ header{
 }
 
 #right-nav{
-    width: 27%;
+    width: 30%;
     border-radius: 10px 0 0 10px;
+}
+
+#create-playlist{
+    display: flex;
+    align-items: center;
+}
+
+#create-playlist input{
+    height: 2.5rem;
+    width: 12rem;
+    padding: 0.3rem;
+    font-size: 17px;
+    margin-right: 15px;
+    border: 2px solid black;
+    background: transparent;
+}
+
+#contains-playlist{
+    width: 70%;
+    height: 85%;
+    margin-top: 1rem;
+    border-radius: 5px 10px;
+    box-shadow: darkmagenta -2px -2px 5px 0px;
 }
