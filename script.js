@@ -52,6 +52,28 @@ let playlist;
 const currentPlaylist = {};
 
 
+// Function to toggle the theme
+const toggleSwitch =
+    document.querySelector('.theme-slider input[type="checkbox"]');
+  
+/* Function to change theme */
+function switchTheme(e) {
+
+    // changing color of body, li and song details
+    /* Once checkbox is checked default theme change to dark */
+    if (e.target.checked) {
+        document.documentElement.setAttribute('theme', 'dark');
+    }
+  
+    /* While page in dark mode and checkbox is 
+    checked then theme back to change light*/
+    else {
+        document.documentElement.setAttribute('theme', 'light');
+    }
+}
+  
+toggleSwitch.addEventListener('change', switchTheme, false);
+
 // adding song to list:
 function showSong(songList){
     songEl.textContent = '';
