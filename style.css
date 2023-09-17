@@ -137,12 +137,12 @@ header{
     border-radius: 10px 0 0 10px;
 }
 
-#create-playlist{
+#playlist{
     display: flex;
     align-items: center;
 }
 
-#create-playlist input{
+#playlist input{
     height: 2.5rem;
     width: 12rem;
     padding: 0.3rem;
@@ -150,6 +150,10 @@ header{
     margin-right: 15px;
     border: 2px solid black;
     background: transparent;
+}
+
+#playlist-song{
+    padding: 0;
 }
 
 #contains-playlist{

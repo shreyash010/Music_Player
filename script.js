@@ -1,4 +1,4 @@
-let songs = [
+const songs = [
     {
         id: 1,
         songName: 'Whistle',
@@ -14,6 +14,22 @@ let songs = [
         genre: 'Pop',
         imgSrc: 'https://i.ytimg.com/vi/-PBQa9aEDPk/maxresdefault.jpg',
         audioSrc: './audio/Solo.mp3'
+    },
+    {
+        id: 3,
+        songName: 'Hall of Fame',
+        artist: 'The Script',
+        genre: 'Hip Hop',
+        imgSrc: 'https://i.ytimg.com/vi/1yBc5aDEk5o/maxresdefault.jpg',
+        audioSrc: './audio/HallofFame.mp3'
+    },
+    {
+        id: 4,
+        songName: 'Unstoppable',
+        artist: 'Sia',
+        genre: 'Electronic',
+        imgSrc: 'https://i.ytimg.com/vi/h3h035Eyz5A/maxresdefault.jpg',
+        audioSrc: './audio/unstoppable.mp3'
     }
 ]
 
@@ -24,9 +40,17 @@ const songDetailsEl = document.getElementById('song-details');
 const songControlEl = document.getElementById('song-controls');
 const prevEl = document.getElementById('prev');
 const nextEl = document.getElementById('next');
+const createPlaylist = document.getElementById('create-playlist');
+const createInput = document.getElementById('create-input');
+const songPlaylistEl = document.getElementById('song-playlist');
+const addToPlaylistEl = document.getElementById('add-playlist');
+const playlistSongEl = document.getElementById('playlist-song');
 
 // variable required:
 let songList = [];
+let playlist;
+const currentPlaylist = {};
+
 
 // adding song to list:
 function showSong(songList){
@@ -115,3 +139,56 @@ prevEl.addEventListener('click', () => {
 nextEl.addEventListener('click', () => {
     changeSong('next');
 })
+
+// adding event listener to add songs to playlist
+addToPlaylistEl.addEventListener('click', () => {
+    const songCardName = document.querySelector('#song-details p');
+    let index = songs.findIndex(song => song.songName === songCardName.textContent);
+
+    const songPl = `${songs[index]['songName']} ${songs[index]['artist']}`;
+
+    if(currentPlaylist.playlist){
+        currentPlaylist[playlist].add(songPl);
+    }else if(playlist){
+        currentPlaylist[playlist] = new Set();
+        currentPlaylist[playlist].add(songPl);
+    }
+    console.log(currentPlaylist);
+    renderPlaylistSong(playlist);
+})
+
+// adding event listener to create playlist button
+createPlaylist.addEventListener('click', () => {
+    
+    const playlistLi = document.createElement('li');
+    playlistLi.classList.add('song-li');
+    playlistLi.textContent = createInput.value;
+    
+    if(createInput.value.match(/^[A-Za-z\s]+$/)){
+        songPlaylistEl.appendChild(playlistLi);
+    }else{
+        alert("Please enter playlist name");
+    }
+
+    playlist = playlistLi.textContent;
+
+    playlistLi.addEventListener('click', () => {
+        playlist = playlistLi.textContent;
+        renderPlaylistSong(playlist);
+    })
+})
+
+// showing playlist song in current playlist:
+function renderPlaylistSong(playlistObj){
+    playlistSongEl.innerHTML = '';
+    const songToAdd = currentPlaylist[playlistObj];
+    if(songToAdd){
+        songToAdd.forEach(song => {
+            const songLi = document.createElement('li');
+            songLi.classList.add('song-li');
+            songLi.textContent = song;
+    
+            playlistSongEl.appendChild(songLi);
+        });
+    }
+}

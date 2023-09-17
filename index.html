@@ -53,16 +53,18 @@
                 </div>
             </div>
             <div id="right-nav">
-                <div id="create-playlist">
-                    <input type="text" placeholder="Enter playlist name">
-                    <button class="btn" id="create-playlist">Create Playlist</button>
+                <div id="playlist">
+                    <input type="text" id="create-input" placeholder="Enter playlist name" required>
+                    <button class="btn" type="submit" id="create-playlist">Create Playlist</button>
                 </div>
                 <div class="bars" id="contains-playlist">
-                    <div id="playlist-song">
+                    <div>
                         <h3>Current Playlist</h3>
+                        <ul class="song-list" id="playlist-song"></ul>
                     </div>
                     <div id="created-playlist">
                         <h3>All Playlist</h3>
+                        <ul class="song-list" id="song-playlist"></ul>
                     </div>
                 </div>
             </div>
