@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Player App</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300&family=Roboto+Serif:opsz,wght@8..144,200&family=Ubuntu&display=swap" rel="stylesheet"> -->
+</head>
+<body>
+    <header>
+        <div id="title"><h1>Music Player</h1></div>
+    </header>
+    <section>
+        <div id="player-content">
+            <div class="bars" id="left-nav">
+                <div id="dropdown-menu">
+                    <span>Filter by genre: </span>
+                    <select name="songs" id="song-genre">
+                        <option value="All">All</option>
+                        <option value="Hip Hop">Hip Hop</option>
+                        <option value="Pop">Pop</option>
+                        <option value="Rock">Rock</option>
+                        <option value="Electronic">Electronic</option>
+                        <option value="Country">Country</option>
+                        <option value="Classical">Classical</option>
+                    </select>
+                </div>
+                <div id="songs">
+                    <h3>All Songs</h3>
+                    <ul class="song-list" id="song-list">
+                    </ul>
+                </div>
+            </div>
+            <div class="bars" id="mid-nav">
+                <div id="song-details">
+                    <img src="https://i.ytimg.com/vi/TRWSj95xsTc/mqdefault.jpg" alt="Whistle Song by Flo Rida">
+                    <p>Whistle</p>
+                    <span>Flo Rida</span>
+                </div>
+                <div id="song-controls">
+                    <audio controls="controls" src="./audio/Whistle.mp3">
+                    </audio>
+                </div>
+                <div id="audio-controller">
+                    <div id="btn-controls">
+                        <button class="btn" id="prev">Prev</button>
+                        <button class="btn" id="next">Next</button>
+                    </div>
+                    <div id="add-btn">
+                        <button class="btn" id="add-playlist">Add to Playlist</button>
+                    </div>
+                </div>
+            </div>
+            <div class="bars" id="right-nav">
+
+            </div>
+        </div>
+    </section>
+    <script src="script.js"></script>
+</body>
+</html>
