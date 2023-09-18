@@ -361,6 +361,7 @@ input:checked+.slider:before {
     #playlist input {
         width: 12rem;
         margin-right: 15px;
+        border: none;
     }
     
     #contains-playlist {
